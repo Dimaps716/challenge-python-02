@@ -1,11 +1,26 @@
 # Resolve the problem!!
-import string
+import string 
+import random
+
 
 SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
 
+lower = string.ascii_lowercase
+upper = string.ascii_uppercase
+digits = string.digits
 
 def generate_password():
     # Start coding here
+    entero = random.randint(1,3)
+    password = ""
+    contracena_minus = random.sample(lower, entero)
+    contracena_mayus = random.sample(upper, entero)
+    contracena_simbols = random.sample(SYMBOLS, entero)
+    contracena_digits = random.sample(digits, entero)
+    passwordlist =  contracena_mayus + contracena_minus + contracena_digits + contracena_simbols
+
+    password = password.join(passwordlist)
+    return password
 
 
 def validate(password):
